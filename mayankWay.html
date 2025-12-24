@@ -135,7 +135,7 @@ pre a:hover {
             <button class="server" id="server1" onclick="openVideo('videos/bodayhaboday.mp4')"> Video 1 </button>
             <button class="server" id="server2" onclick="openVideo('videos/chickenEgg.mp4')"> Video 2 </button>
             <button class="server" id="server3" onclick="openVideo('videos/alahuakbar.mp4')"> Video 3 </button>
-            <button class="server" id="server4" onclick="openVideo('videos/Tatiya1.mp4')"> Video 4 </button>
+            <!-- <button class="server" id="server4" onclick="openVideo('videos/Tatiya1.mp4')"> Video 4 </button> -->
             <button class="server" id="server5" onclick="openVideo('videos/specialone.mp4')"> Video 5 </button>
         </div>
 
@@ -185,7 +185,7 @@ video.addEventListener("play", function () {
     }
 
     // Show gift when all 5 videos are played
-    if (watchedVideos.size === 5) {
+    if (watchedVideos.size === 4) {
         preTag.style.display = "block";
     }
 });
@@ -201,8 +201,8 @@ function openVideo(videoSrc) {
         title.innerText = " Happy Birthday to you 🐔🥚🐣";
     } else if (videoSrc === "videos/alahuakbar.mp4") {
         title.innerText = " Let's dance together 😁😁😅😅🤣🤣";
-    } else if (videoSrc === "videos/Tatiya1.mp4") {
-        title.innerText = " Happy Birthday 😜😜😜";
+     } //else if (videoSrc === "videos/Tatiya1.mp4") {
+    //     title.innerText = " Happy Birthday 😜😜😜";
     } else if (videoSrc === "videos/specialone.mp4") {
         title.innerText = " Special video just for fun 😁😁😁";
     }
@@ -232,4 +232,5 @@ window.onclick = function (event) {
 </script>
 
 </body>
+
 </html>
