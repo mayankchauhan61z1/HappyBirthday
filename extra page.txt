@@ -1,0 +1,126 @@
+              work when user watch full video 
+<script>
+let watchedVideos = new Set(); // store unique videos watched
+
+confirm("For gift you have to play all videos 🎥🎥🎥");
+
+const video = document.getElementById("myVideo");
+const preTag = document.querySelector("pre");
+
+// Detect when a video finishes
+video.addEventListener("ended", function () {
+    if (video.dataset.currentVideo) {
+        watchedVideos.add(video.dataset.currentVideo);
+    }
+
+    // If all 5 videos are watched
+    if (watchedVideos.size === 5) {
+        preTag.style.display = "block";
+    }
+});
+
+function openVideo(videoSrc) {
+    const modal = document.getElementById("videoModal");
+    const title = document.getElementById("videotitle");
+
+    // Titles
+    if (videoSrc === "videos/bodayhaboday.mp4") {
+        title.innerText = " Boday ha Boday 🥳🥳🥳 ";
+    } else if (videoSrc === "videos/chickenEgg.mp4") {
+        title.innerText = " Happy Birthday to you 🐔🥚🐣";
+    } else if (videoSrc === "videos/alahuakbar.mp4") {
+        title.innerText = " Let's dance together 😁😁😅😅🤣🤣";
+    } else if (videoSrc === "videos/Tatiya1.mp4") {
+        title.innerText = " Happy Birthday 😜😜😜";
+    } else if (videoSrc === "videos/specialone.mp4") {
+        title.innerText = " Special video just for fun 😁😁😁";
+    }
+
+    modal.style.display = "block";
+
+    video.pause();
+    video.currentTime = 0;
+    video.src = videoSrc;
+
+    // Track current video
+    video.dataset.currentVideo = videoSrc;
+
+    video.play().catch(() => {});
+}
+
+function closeVideo() {
+    video.pause();
+    video.currentTime = 0;
+    document.getElementById("videoModal").style.display = "none";
+}
+
+window.onclick = function (event) {
+    const modal = document.getElementById("videoModal");
+    if (event.target === modal) closeVideo();
+};
+</script>
+
+user do not need to watch full video
+
+
+<script>
+let watchedVideos = new Set(); // unique videos only
+
+confirm("For gift you have to play all videos 🎥🎥🎥");
+
+const video = document.getElementById("myVideo");
+const preTag = document.querySelector("pre");
+
+// Count video when it starts playing
+video.addEventListener("play", function () {
+    const current = video.dataset.currentVideo;
+    if (current && !watchedVideos.has(current)) {
+        watchedVideos.add(current);
+    }
+
+    // Show gift when all 5 videos are played
+    if (watchedVideos.size === 5) {
+        preTag.style.display = "block";
+    }
+});
+
+function openVideo(videoSrc) {
+    const modal = document.getElementById("videoModal");
+    const title = document.getElementById("videotitle");
+
+    // Titles
+    if (videoSrc === "videos/bodayhaboday.mp4") {
+        title.innerText = " Boday ha Boday 🥳🥳🥳 ";
+    } else if (videoSrc === "videos/chickenEgg.mp4") {
+        title.innerText = " Happy Birthday to you 🐔🥚🐣";
+    } else if (videoSrc === "videos/alahuakbar.mp4") {
+        title.innerText = " Let's dance together 😁😁😅😅🤣🤣";
+    } else if (videoSrc === "videos/Tatiya1.mp4") {
+        title.innerText = " Happy Birthday 😜😜😜";
+    } else if (videoSrc === "videos/specialone.mp4") {
+        title.innerText = " Special video just for fun 😁😁😁";
+    }
+
+    modal.style.display = "block";
+
+    video.pause();
+    video.currentTime = 0;
+    video.src = videoSrc;
+
+    // Track current video
+    video.dataset.currentVideo = videoSrc;
+
+    video.play().catch(() => {});
+}
+
+function closeVideo() {
+    video.pause();
+    video.currentTime = 0;
+    document.getElementById("videoModal").style.display = "none";
+}
+
+window.onclick = function (event) {
+    const modal = document.getElementById("videoModal");
+    if (event.target === modal) closeVideo();
+};
+</script>

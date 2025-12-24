@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Gift 🎁</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #fbcfe8, #fde68a);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .gift-container {
+            background: #ffffff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 90%;
+            max-width: 420px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            animation: popIn 0.8s ease-out;
+        }
+
+        h1 {
+            margin: 0 0 15px;
+            color: #be123c;
+            font-size: 32px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #374151;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        .gift-box {
+            font-size: 90px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.15) rotate(-5deg);
+        }
+
+        .surprise {
+            display: none;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #166534;
+            font-weight: bold;
+        }
+
+        @keyframes popIn {
+            from {
+                transform: scale(0.6);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gift-container">
+        <h1>🎉 Surprise! 🎉</h1>
+        <p>Click the gift box to open your special surprise 💖</p>
+
+        <div class="gift-box" onclick="openGift()">🎁</div>
+
+        <div class="surprise" id="surpriseText">
+            🌟 May your life be filled with happiness, success,  
+            and endless smiles 🌟
+        </div>
+    </div>
+
+    <script>
+        function openGift() {
+            document.getElementById("surpriseText").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

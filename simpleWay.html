@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Way</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #fde68a, #fca5a5);
+            overflow: hidden;
+        }
+
+        pre {
+            display: block;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        pre a {
+            color: #4338ca;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        pre a:hover {
+            text-decoration: underline;
+        }
+
+        .maincontainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 105vh;
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: -8px;
+            margin-bottom: -1px;
+            font-size: 36px;
+            color: #7c2d12;
+        }
+
+        /* Image stacking */
+        .cakeAndImage {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cakeAndImage img:first-child {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cakeAndImage img:last-child {
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+        }
+
+        /* ================= BALLOONS ================= */
+
+/* ================= BALLOONS ================= */
+
+.balloons {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.balloons img {
+    position: absolute;
+    bottom: -150px;
+    width: 180px;
+    animation: floatUp linear infinite;
+    opacity: 0.95;
+}
+
+/* LEFT SIDE BALLOONS */
+.balloons img:nth-child(odd) {
+    left: -10%;
+}
+
+/* RIGHT SIDE BALLOONS */
+.balloons img:nth-child(even) {
+    right: -10%;
+}
+
+/* CENTER MIX */
+.balloons img:nth-child(3n) {
+    left: 30%;
+}
+
+/* Individual variation */
+.balloons img:nth-child(1)  { animation-duration: 12s; left: 5%; }
+.balloons img:nth-child(2)  { animation-duration: 10s; right: 8%; }
+.balloons img:nth-child(3)  { animation-duration: 14s; left: 25%; }
+.balloons img:nth-child(4)  { animation-duration: 11s; right: 20%; }
+.balloons img:nth-child(5)  { animation-duration: 15s; left: 40%; }
+.balloons img:nth-child(6)  { animation-duration: 9s;  right: 35%; }
+.balloons img:nth-child(7)  { animation-duration: 13s; left: 55%; }
+.balloons img:nth-child(8)  { animation-duration: 10s; right: 50%; }
+.balloons img:nth-child(9)  { animation-duration: 16s; left: 70%; }
+.balloons img:nth-child(10) { animation-duration: 12s; right: 65%; }
+
+.balloons img:nth-child(n+11) {
+    animation-duration: calc(9s + (random() * 6s));
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-60vh) translateX(20px);
+    }
+    100% {
+        transform: translateY(-130vh) translateX(-20px);
+        opacity: 0;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- BALLOONS -->
+   <div class="balloons">
+    <img src="images/ballon1.svg">
+    <img src="images/ballon2.svg">
+    <img src="images/ballon3.svg">
+    <img src="images/ballon1.svg">
+    <img src="images/ballon2.svg">
+    <img src="images/ballon3.svg">
+    <img src="images/ballon1.svg">
+    <img src="images/ballon2.svg">
+    <img src="images/ballon3.svg">
+    <img src="images/ballon1.svg">
+    <img src="images/ballon2.svg">
+    <img src="images/ballon3.svg">
+    <img src="images/ballon1.svg">
+    <img src="images/ballon2.svg">
+    <img src="images/ballon3.svg">
+    <img src="images/ballon1.svg">
+    <img src="images/ballon2.svg">
+    <img src="images/ballon3.svg">
+    <img src="images/ballon1.svg">
+    <img src="images/ballon2.svg">
+    <img src="images/ballon3.svg">
+</div>
+
+
+    <!-- MAIN CONTENT -->
+    <div class="maincontainer">
+        <h1>🎉 Happy Birthday! 🎉</h1>
+
+        <div class="cakeAndImage">
+            <img src="images/krishnaPic2.png" style="height: 550px; width: 400px;">
+            <img src="images/cake.jpeg">
+        </div>
+
+        <audio autoplay loop>
+            <source src="birthdayThemeSong.mp3" type="audio/mpeg">
+        </audio>
+
+        <pre>
+Time to gift 
+<a href="gift.html">click here to get your gift 🎁🎁🎁</a>
+        </pre>
+    </div>
+
+</body>
+</html>

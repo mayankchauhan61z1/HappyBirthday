@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayank Way</title>
+
+    <style>
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: #f8fafc;
+}
+
+.fullcontainer {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.fullcontainer h1 {
+    margin-bottom: 12px;
+    font-size: 32px;
+    letter-spacing: 1px;
+}
+
+.servercollection {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.servercollection h2 {
+    width: 100%;
+    margin-bottom: 18px;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.server {
+    padding: 10px 22px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    background: #6366f1;
+    color: #ffffff;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.server:hover {
+    background: #818cf8;
+    transform: translateY(-2px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.modal-content {
+    background: #020617;
+    width: 100%;
+    height: 350px;
+    max-width: 300px;
+    margin: 10% auto;
+    position: relative;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.modal-content h1 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+video {
+    width: 100%;
+    height: 200px;
+    border-radius: 4px;
+    background: #000;
+}
+
+.close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #e5e7eb;
+}
+
+.close:hover {
+    color: #ffffff;
+}
+
+pre {
+    display: none;
+    font-size: 20px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+pre a {
+    color: #a5b4fc;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+pre a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+
+</head>
+<body>
+    <div class="fullcontainer">
+        <h1> HELLO LADLE KASE HO AJJ </h1>
+        <!-- <audio  autoplay loop>
+            <source src="mayankWaySong.mp3" type="audio/mpeg">
+        </audio> -->
+        <div class="servercollection">
+            <h2> Some sepecial videos just  for you 😁😁😁😁😁😁 </h2>
+            <button class="server" id="server1" onclick="openVideo('videos/bodayhaboday.mp4')"> Video 1 </button>
+            <button class="server" id="server2" onclick="openVideo('videos/chickenEgg.mp4')"> Video 2 </button>
+            <button class="server" id="server3" onclick="openVideo('videos/alahuakbar.mp4')"> Video 3 </button>
+            <button class="server" id="server4" onclick="openVideo('videos/Tatiya1.mp4')"> Video 4 </button>
+            <button class="server" id="server5" onclick="openVideo('videos/specialone.mp4')"> Video 5 </button>
+        </div>
+
+        <div id="videoModal" class="modal">
+        
+            <div class="modal-content">
+                <h1 id="videotitle"></h1>
+                <span class="close" onclick="closeVideo()">&times;</span>
+                <video id="myVideo" controls>
+                <!-- <source src="" type="video/mp4">> -->
+               </video>
+            </div>
+        </div>
+        <pre>
+Time to gift 
+<a href="gift.html">click here to get your gift 🎁🎁🎁</a>
+        </pre>
+        <!-- if needed then i use
+
+            <img src="mayankway1.jpg" alt="">
+            <img src="mayankway2.jpg" alt="">
+            <img src="mayankway3.jpg" alt="">
+            <img src="mayankway4.jpg" alt="">
+            <img src="mayankway5.jpg" alt="">
+            <img src="mayankway6.jpg" alt="">
+            <img src="mayankway7.jpg" alt="">
+            <img src="mayankway8.jpg" alt="">
+            <img src="mayankway9.jpg" alt="">
+            <img src="mayankway10.jpg" alt="">
+     
+        -->
+        
+    </div>
+<script>
+let watchedVideos = new Set(); // unique videos only
+
+confirm("For gift you have to play all videos 🎥🎥🎥");
+
+const video = document.getElementById("myVideo");
+const preTag = document.querySelector("pre");
+
+// Count video when it starts playing
+video.addEventListener("play", function () {
+    const current = video.dataset.currentVideo;
+    if (current && !watchedVideos.has(current)) {
+        watchedVideos.add(current);
+    }
+
+    // Show gift when all 5 videos are played
+    if (watchedVideos.size === 5) {
+        preTag.style.display = "block";
+    }
+});
+
+function openVideo(videoSrc) {
+    const modal = document.getElementById("videoModal");
+    const title = document.getElementById("videotitle");
+
+    // Titles
+    if (videoSrc === "videos/bodayhaboday.mp4") {
+        title.innerText = " Boday ha Boday 🥳🥳🥳 ";
+    } else if (videoSrc === "videos/chickenEgg.mp4") {
+        title.innerText = " Happy Birthday to you 🐔🥚🐣";
+    } else if (videoSrc === "videos/alahuakbar.mp4") {
+        title.innerText = " Let's dance together 😁😁😅😅🤣🤣";
+    } else if (videoSrc === "videos/Tatiya1.mp4") {
+        title.innerText = " Happy Birthday 😜😜😜";
+    } else if (videoSrc === "videos/specialone.mp4") {
+        title.innerText = " Special video just for fun 😁😁😁";
+    }
+
+    modal.style.display = "block";
+
+    video.pause();
+    video.currentTime = 0;
+    video.src = videoSrc;
+
+    // Track current video
+    video.dataset.currentVideo = videoSrc;
+
+    video.play().catch(() => {});
+}
+
+function closeVideo() {
+    video.pause();
+    video.currentTime = 0;
+    document.getElementById("videoModal").style.display = "none";
+}
+
+window.onclick = function (event) {
+    const modal = document.getElementById("videoModal");
+    if (event.target === modal) closeVideo();
+};
+</script>
+
+</body>
+</html>

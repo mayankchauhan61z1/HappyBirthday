@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Gift</title>
+    <style>
+       body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #dbeafe, #fbcfe8);
+}
+
+.maincontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 25px;
+    background: linear-gradient(135deg, #dbeafe, #fbcfe8);
+}
+
+.img1,
+.img2 {
+    background: linear-gradient(135deg, #dbeafe, #fbcfe8);
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.img1 img,
+.img2 img {
+    width: 220px;
+    height: auto;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #dbeafe, #fbcfe8);
+}
+
+pre {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    color: #1e293b;
+}
+
+pre input {
+    padding: 5px;
+    border-radius: 8px;
+    border: 2px solid #f472b6;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+pre button {
+    color: #ec4899;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+}
+pre button {
+    background: linear-gradient(135deg, #fbcfe8, #dbeafe);
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: text-decoration 0.3s ease;
+}
+pre button:hover {
+    text-decoration: underline;
+}
+
+        /*
+        .img1 {
+            background-color: #ffe0b2;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        .img2 {
+            background-color: #c8e6c9;
+            padding: 10px;
+            border-radius: 15px;
+        } */
+    </style>
+</head>
+<body>
+    <div class="maincontainer">
+        <!-- use when you want to show multiple gifts with its original background -->
+        <!-- <div class="img1">
+            <img src="images/Gift1.png" alt="Gift 1">
+        </div>
+        <div class="img2">
+            <img src="images/Gift2.png" alt="Gift 2">
+        </div> -->
+        <!-- use when you want to show multiple gifts with your generated background -->
+        <div class="img1">
+            <img src="images/Gift1-removebg-preview.png" alt="Gift 3">
+        </div>
+        <div class="img2">
+            <img src="images/Gift2-removebg-preview.png" alt="Gift 4">
+        </div>
+            <pre>
+Ok apart of these gifts you have one more surprise gift waiting for you 😁😁😁😁😁😁😁
+Enter password to get your gift 🎁🎁🎁🎁🎁🎁🎁 : <input type="password" id="passwordfield" placeholder="Enter the password">
+<button class="yes" onclick="checkPass()">click here to get your gift 🎁🎁🎁</button>
+    </pre>
+    </div>
+
+    <!-- for redirect on same page again and again 😁😁😁🤣🤣🤣 -->
+     <!-- bichar link par click hi karta reh jayega 😅😅🤣🤣 -->
+      <!-- only you have to write css and lill js so we can make dinamic chage so every time atlest background color change every time -->
+    <!-- <h1>Congratulations!</h1>
+    <p>You've unlocked your special birthday gift. Click the link below to claim it:</p>
+    <a href="gift.html" target="_blank">Claim Your Gift</a>  -->
+
+    <script>
+
+function checkPass() {
+    var password = document.getElementById("passwordfield").value;
+    if(password === "HappyBirthdayKrishna") {
+        window.location.href = "originalGift.html";
+    } else {
+        alert("Incorrect password! Please try again.");
+    }
+}
+
+    </script>
+
+</body>
+</html>
